@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import { env, publicUrl } from "@/env.mjs";
 import { IntlClientProvider } from "@/i18n/client";
 import { getLocale, getMessages, getTranslations } from "@/i18n/server";
+import { ChatButton } from "@/ui/chat-button";
 import { Toaster } from "@/ui/shadcn/sonner";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -27,6 +28,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 				<IntlClientProvider messages={messages} locale={locale}>
 					<div className="flex min-h-full flex-1 flex-col bg-white" vaul-drawer-wrapper="">
 						{children}
+						<ChatButton />
 					</div>
 					<Toaster position="top-center" offset={10} />
 				</IntlClientProvider>
